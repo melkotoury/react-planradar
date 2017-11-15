@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import {Button, Form, FormGroup, InputGroup, InputGroupAddon, Input, FormFeedback, FormText, Container, Row, Col} from 'reactstrap';
 import './login.css';
+import {Link} from 'react-router-dom';
 import Header from '../header/header';
 
 
@@ -82,7 +83,7 @@ class Login extends Component {
                             sm={{size: 6, offset: 3}}
                             lg={{size: 4, offset: 4}}
                         >
-                            <a href="" className="btn btn-success btn-block">Signup for free <span className="pull-right fa fa-arrow-right"></span></a>
+                            <Link to='/signup' className="btn btn-success btn-block">Signup for free <span className="pull-right fa fa-arrow-right"></span></Link>
                         </Col>
                     </Row>
                 </Container>
