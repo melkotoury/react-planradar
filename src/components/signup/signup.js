@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import {Button, Form, FormGroup, InputGroup, InputGroupAddon, Input, FormFeedback, FormText, Container, Row, Col} from 'reactstrap';
 import './signup.css';
+import Header from '../header/header';
 
 class Signup extends Component {
     constructor(props){
@@ -11,6 +12,9 @@ class Signup extends Component {
     }
     render() {
         return (
+            <div className="App">
+                <Header/>
+                <div className="App-intro">
             <div className="signup">
                 <header className="signup-header">
                     <h1 className="signup-title">Sign Up for free</h1>
@@ -57,6 +61,8 @@ class Signup extends Component {
                     </Container>
                 </Form>
 
+            </div>
+                </div>
             </div>
 
         );

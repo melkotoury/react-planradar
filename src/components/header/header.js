@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink ,
          Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import logo from '../../assets/logo.png';
+import {Link} from 'react-router-dom';
 import './header.css';
 
  class Header extends Component {
@@ -30,14 +31,16 @@ import './header.css';
         return (
             <div>
                 <Navbar color="faded" light expand="md">
-                    <NavbarBrand href="/">
-                        <img src={logo} alt="Planradar"/>
-                    </NavbarBrand>
+                        <Link className='navbar-brand' to="/">
+                            <img src={logo} alt="Planradar"/>
+                        </Link>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="" >Signup for free</NavLink>
+                                <Link className='nav-link' to='/signup'>
+                                    Signup for free
+                                </Link>
                             </NavItem>
                             <NavItem>
                                 <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
