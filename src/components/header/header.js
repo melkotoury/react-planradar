@@ -108,8 +108,6 @@ import './header.css';
                                     <DropdownMenu>
                                         <DropdownItem>Deutsch</DropdownItem>
                                         <DropdownItem>English</DropdownItem>
-                                        <DropdownItem>Español</DropdownItem>
-                                        <DropdownItem>Français</DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
                             </NavItem>
