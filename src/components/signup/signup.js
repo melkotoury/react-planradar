@@ -29,7 +29,7 @@ class Signup extends Component {
                             >
                                 <FormGroup>
                                     <InputGroup size="lg">
-                                        <Input  placeholder='Username (Your Email)'/>
+                                        <Input  placeholder='Full Name'/>
                                         <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                     </InputGroup>
                                     <FormFeedback></FormFeedback>
@@ -43,7 +43,21 @@ class Signup extends Component {
                             >
                                 <FormGroup>
                                     <InputGroup size="lg">
-                                        <Input  placeholder='Choose Your Password'/>
+                                        <Input  placeholder='Email'/>
+                                        <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
+                                    </InputGroup>
+                                    <FormFeedback></FormFeedback>
+                                    <FormText></FormText>
+                                </FormGroup>
+                            </Col>
+                            <Col
+                                xs={{size: 12}}
+                                sm={{size: 6, offset: 3}}
+                                lg={{size: 4, offset: 4}}
+                            >
+                                <FormGroup>
+                                    <InputGroup size="lg">
+                                        <Input type='password'  placeholder='Choose Your Password'/>
                                         <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
                                     </InputGroup>
                                     <FormFeedback></FormFeedback>

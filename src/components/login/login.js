@@ -45,7 +45,7 @@ class Login extends Component {
                             >
                                 <FormGroup>
                                     <InputGroup size="lg">
-                                        <Input  placeholder='Choose Your Password'/>
+                                        <Input type='password'  placeholder='Choose Your Password'/>
                                         <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
                                     </InputGroup>
                                     <FormFeedback></FormFeedback>
