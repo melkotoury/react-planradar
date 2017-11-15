@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 import {Button, Form, FormGroup, InputGroup, InputGroupAddon, Input, FormFeedback, FormText, Container, Row, Col} from 'reactstrap';
+import './login.css';
 
 class Login extends Component {
     constructor(props){
@@ -10,7 +11,48 @@ class Login extends Component {
     }
     render() {
         return (
-            <Form>
+            <div className="login">
+                <Form>
+                    <Container>
+                        <Row>
+                            <Col
+                                xs={{size: 12}}
+                                sm={{size: 6, offset: 3}}
+                                lg={{size: 4, offset: 4}}
+                            >
+                                <FormGroup>
+                                    <InputGroup size="lg">
+                                        <Input  placeholder='Username (Your Email)'/>
+                                        <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
+                                    </InputGroup>
+                                    <FormFeedback></FormFeedback>
+                                    <FormText></FormText>
+                                </FormGroup>
+                            </Col>
+                            <Col
+                                xs={{size: 12}}
+                                sm={{size: 6, offset: 3}}
+                                lg={{size: 4, offset: 4}}
+                            >
+                                <FormGroup>
+                                    <InputGroup size="lg">
+                                        <Input  placeholder='Choose Your Password'/>
+                                        <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
+                                    </InputGroup>
+                                    <FormFeedback></FormFeedback>
+                                    <FormText></FormText>
+                                </FormGroup>
+                            </Col>
+                            <Col
+                                xs={{size: 12}}
+                                sm={{size: 6, offset: 3}}
+                                lg={{size: 4, offset: 4}}
+                            >
+                                <Button className='btn btn-success btn-block'>Login <span className="pull-right fa fa-arrow-right"></span></Button>
+                            </Col>
+                        </Row>
+                    </Container>
+                </Form>
                 <Container>
                     <Row>
                         <Col
@@ -18,39 +60,25 @@ class Login extends Component {
                             sm={{size: 6, offset: 3}}
                             lg={{size: 4, offset: 4}}
                         >
-                            <FormGroup>
-                                <InputGroup size="lg">
-                                    <Input isValid={this.state.isValid} placeholder='Username (Your Email)'/>
-                                    <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
-                                </InputGroup>
-                                <FormFeedback></FormFeedback>
-                                <FormText></FormText>
-                            </FormGroup>
+                            <hr />
                         </Col>
                         <Col
                             xs={{size: 12}}
                             sm={{size: 6, offset: 3}}
                             lg={{size: 4, offset: 4}}
                         >
-                            <FormGroup>
-                                <InputGroup size="lg">
-                                    <Input isValid={this.state.isValid} placeholder='Choose Your Password'/>
-                                    <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
-                                </InputGroup>
-                                <FormFeedback></FormFeedback>
-                                <FormText></FormText>
-                            </FormGroup>
+                            <a href="" className="btn btn-link white">Forger Password</a>
                         </Col>
                         <Col
                             xs={{size: 12}}
                             sm={{size: 6, offset: 3}}
                             lg={{size: 4, offset: 4}}
                         >
-                            <Button className='btn btn-success btn-block'>Login <span className="pull-right fa fa-arrow-right"></span></Button>
+                            <a href="" className="btn btn-success btn-block">Signup for free <span className="pull-right fa fa-arrow-right"></span></a>
                         </Col>
                     </Row>
                 </Container>
-            </Form>
+            </div>
 
         );
     }
