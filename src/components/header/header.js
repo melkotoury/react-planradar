@@ -46,18 +46,33 @@ import './header.css';
                       </Link>
                     </NavItem>
                 );
-            case 'not-found':
-                return(
-                    <div className='inherit-div'>
-                        <NavItem>
+            case 'not-found' :
+            return(
+                <div className='inherit-div'>
+                    <NavItem>
                         <Link to='/' className='nav-link'>
                             Login
                         </Link>
-                        </NavItem>
-                        <NavItem>
+                    </NavItem>
+                    <NavItem>
                         <Link to='/signup' className='nav-link'>
                             Signup for free
                         </Link>
+                    </NavItem>
+                </div>
+            );
+            case 'forget-password' :
+                return(
+                    <div className='inherit-div'>
+                        <NavItem>
+                            <Link to='/' className='nav-link'>
+                                Login
+                            </Link>
+                        </NavItem>
+                        <NavItem>
+                            <Link to='/signup' className='nav-link'>
+                                Signup for free
+                            </Link>
                         </NavItem>
                     </div>
                 );

@@ -76,7 +76,7 @@ class Login extends Component {
                             sm={{size: 6, offset: 3}}
                             lg={{size: 4, offset: 4}}
                         >
-                            <a href="" className="btn btn-link white">Forger Password ?</a>
+                            <Link to='/forget-password' className="btn btn-link white">Forget Password ?</Link>
                         </Col>
                         <Col
                             xs={{size: 12}}
