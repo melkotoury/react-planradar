@@ -13,3 +13,6 @@ ul.navbar-nav{
 .lang{
     color: white !important;
 }
+.inherit-div{
+    display: inherit;
+}

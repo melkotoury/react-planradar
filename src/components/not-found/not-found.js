@@ -5,7 +5,7 @@ import Header from '../header/header';
 
 const NotFound = () => (
     <div className="App">
-        <Header/>
+        <Header page='not-found'/>
         <div className="App-intro">
         <header className="not-found-header">
             <h1 className="not-found-title">Page Not Found!</h1>

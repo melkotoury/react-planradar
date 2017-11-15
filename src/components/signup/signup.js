@@ -13,7 +13,7 @@ class Signup extends Component {
     render() {
         return (
             <div className="App">
-                <Header/>
+                <Header page='signup'/>
                 <div className="App-intro">
             <div className="signup">
                 <header className="signup-header">
