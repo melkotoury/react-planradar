@@ -1,8 +1,9 @@
 import React from 'react';
-import {BrowserRouter , Route} from 'react-router-dom'
+import {BrowserRouter , Route , Switch} from 'react-router-dom'
 import Header from './components/header/header';
 import Login from './components/login/login';
 import Signup from './components/signup/signup';
+import NotFound from "./components/not-found/not-found";
 import './App.css';
 
 const App = () => (
@@ -16,10 +17,11 @@ const App = () => (
 );
 const routes = (
     <BrowserRouter>
-        <div>
+        <Switch>
             <Route path="/" component={Login} exact={true}/>
             <Route path="/signup" component={Signup} exact={true}/>
-        </div>
+            <Route  component={NotFound}/>
+        </Switch>
     </BrowserRouter>
 );
 
