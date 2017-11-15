@@ -1,23 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
+import {BrowserRouter , Route} from 'react-router-dom'
 import Header from './components/header/header';
 import Login from './components/login/login';
+import Signup from './components/signup/signup';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
+const App = () => (
+    <div className="App">
         <Header/>
-        <header className="App-header">
-          <h1 className="App-title">Welcome back!</h1>
-        </header>
         <div className="App-intro">
-            <Login/>
+            {routes}
         </div>
 
-      </div>
-    );
-  }
-}
+    </div>
+);
+const routes = (
+    <BrowserRouter>
+        <div>
+            <Route path="/" component={Login} exact={true}/>
+            <Route path="/signup" component={Signup} exact={true}/>
+        </div>
+    </BrowserRouter>
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default App;

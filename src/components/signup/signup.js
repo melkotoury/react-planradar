@@ -1,8 +1,8 @@
 import React , {Component} from 'react';
 import {Button, Form, FormGroup, InputGroup, InputGroupAddon, Input, FormFeedback, FormText, Container, Row, Col} from 'reactstrap';
-import './login.css';
+import './signup.css';
 
-class Login extends Component {
+class Signup extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -11,9 +11,9 @@ class Login extends Component {
     }
     render() {
         return (
-            <div className="login">
-                <header className="login-header">
-                    <h1 className="login-title">Welcome back!</h1>
+            <div className="signup">
+                <header className="signup-header">
+                    <h1 className="signup-title">Sign Up for free</h1>
                 </header>
                 <Form>
                     <Container>
@@ -51,40 +51,16 @@ class Login extends Component {
                                 sm={{size: 6, offset: 3}}
                                 lg={{size: 4, offset: 4}}
                             >
-                                <Button className='btn btn-success btn-block'>Login <span className="pull-right fa fa-arrow-right"></span></Button>
+                                <Button className='btn btn-success btn-block'>Create new account <span className="pull-right fa fa-arrow-right"></span></Button>
                             </Col>
                         </Row>
                     </Container>
                 </Form>
-                <Container>
-                    <Row>
-                        <Col
-                            xs={{size: 12}}
-                            sm={{size: 6, offset: 3}}
-                            lg={{size: 4, offset: 4}}
-                        >
-                            <hr />
-                        </Col>
-                        <Col
-                            xs={{size: 12}}
-                            sm={{size: 6, offset: 3}}
-                            lg={{size: 4, offset: 4}}
-                        >
-                            <a href="" className="btn btn-link white">Forger Password ?</a>
-                        </Col>
-                        <Col
-                            xs={{size: 12}}
-                            sm={{size: 6, offset: 3}}
-                            lg={{size: 4, offset: 4}}
-                        >
-                            <a href="" className="btn btn-success btn-block">Signup for free <span className="pull-right fa fa-arrow-right"></span></a>
-                        </Col>
-                    </Row>
-                </Container>
+
             </div>
 
         );
     }
 }
 
-export default Login;
+export default Signup;
