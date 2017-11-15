@@ -42,7 +42,7 @@ class ForgetPassword extends Component {
                                         sm={{size: 6, offset: 3}}
                                         lg={{size: 4, offset: 4}}
                                     >
-                                        <Button className='btn btn-success btn-block'>Forget Password <span className="pull-right fa fa-arrow-right"></span></Button>
+                                        <Button className='btn btn-success btn-block'>Reset Password <span className="pull-right fa fa-arrow-right"></span></Button>
                                     </Col>
                                 </Row>
                             </Container>
