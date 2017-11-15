@@ -1,0 +1,15 @@
+.navbar-brand>img {
+    padding: 1.5em;
+    max-width: 190px;
+    width: 100%;
+}
+ul.navbar-nav{
+    margin-right: 35px !important;
+}
+.nav-link {
+    color: white !important;
+}
+
+.lang{
+    color: white !important;
+}
