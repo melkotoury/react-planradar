@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
-import {bindActionCreators} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {NavItem,Dropdown,DropdownToggle,DropdownItem, DropdownMenu} from 'reactstrap';
+import {selectLanguage} from "../actions/lang";
 
 
 class Language extends Component{
@@ -25,7 +26,12 @@ class Language extends Component{
     renderLanguages() {
         return this.props.lang.map((lang) => {
             return (
-                <DropdownItem key={lang.id}>{lang.lang}</DropdownItem>
+                <DropdownItem
+                    key={lang.id}
+                    onClick={() => this.props.selectLanguage(lang)}
+                >
+                    {lang.lang}
+                </DropdownItem>
             );
         });
 
@@ -51,6 +57,13 @@ class Language extends Component{
 
 }
 
+//dispatch actions (don't hook it to the component)
+
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({selectLanguage : selectLanguage}, dispatch);
+}
+
+
 /**
  * this function take your store and pass it to your component as a property
  * */
@@ -60,4 +73,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps)(Language);
+export default connect(mapStateToProps, matchDispatchToProps)(Language);
