@@ -1,8 +1,9 @@
 import React , {Component} from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav, NavItem,
-         Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import logo from '../../assets/logo.png';
 import {Link} from 'react-router-dom';
+import Language from '../../containers/lang'
+
 import './header.css';
 
  class Header extends Component {
@@ -10,11 +11,11 @@ import './header.css';
         super(props);
 
         this.toggle = this.toggle.bind(this);
-        this.toggleDropDown = this.toggleDropDown.bind(this);
+        // this.toggleDropDown = this.toggleDropDown.bind(this);
         this.displayLinks = this.displayLinks.bind(this);
         this.state = {
-            isOpen: false,
-            dropdownOpen: false
+            isOpen: false
+            // dropdownOpen: false
         };
     }
 
@@ -23,11 +24,11 @@ import './header.css';
             isOpen: !this.state.isOpen
         });
     }
-     toggleDropDown() {
-         this.setState({
-             dropdownOpen: !this.state.dropdownOpen
-         });
-     }
+     // toggleDropDown() {
+     //     this.setState({
+     //         dropdownOpen: !this.state.dropdownOpen
+     //     });
+     // }
      displayLinks(page){
         switch (page){
             case 'login':
@@ -98,19 +99,8 @@ import './header.css';
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             {this.displayLinks(this.props.page)}
-                            <NavItem>
-                                <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropDown}>
-                                    <DropdownToggle
-                                        className='btn btn-link lang'
-                                        caret>
-                                        Languages
-                                    </DropdownToggle>
-                                    <DropdownMenu>
-                                        <DropdownItem>Deutsch</DropdownItem>
-                                        <DropdownItem>English</DropdownItem>
-                                    </DropdownMenu>
-                                </Dropdown>
-                            </NavItem>
+
+                            <Language/>
                         </Nav>
                     </Collapse>
                 </Navbar>

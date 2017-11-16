@@ -35,10 +35,10 @@
     "lang": "de",
     "page": {
       "menu": {
-        "login": "Login",
-        "signup": "Signup for free",
+        "login": "Anmelden",
+        "signup": "Kostenlos registrieren",
         "languages": "Sprache",
-        "forget_password": "Forget Password"
+        "forget_password": "Kennwort vergessen"
       },
       "login": {
         "welcome": "Willkommen zurück!",
