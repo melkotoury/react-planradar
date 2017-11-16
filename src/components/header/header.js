@@ -11,11 +11,9 @@ import './header.css';
         super(props);
 
         this.toggle = this.toggle.bind(this);
-        // this.toggleDropDown = this.toggleDropDown.bind(this);
         this.displayLinks = this.displayLinks.bind(this);
         this.state = {
             isOpen: false
-            // dropdownOpen: false
         };
     }
 
@@ -24,11 +22,7 @@ import './header.css';
             isOpen: !this.state.isOpen
         });
     }
-     // toggleDropDown() {
-     //     this.setState({
-     //         dropdownOpen: !this.state.dropdownOpen
-     //     });
-     // }
+
      displayLinks(page){
         switch (page){
             case 'login':
