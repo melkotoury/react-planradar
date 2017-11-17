@@ -15,7 +15,7 @@ class Signup extends Component {
         this.state = {
             isValid: false,
             fullname: '',
-            username:'',
+            email:'',
             password:''
         };
     }
@@ -68,8 +68,8 @@ class Signup extends Component {
                                                 <InputGroup size="lg">
                                                     <Input
                                                         placeholder='Email'
-                                                        value = {this.state.username}
-                                                        name='username'
+                                                        value = {this.state.email}
+                                                        name='email'
                                                         onChange = {this.onChange}
                                                     />
                                                     <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
@@ -153,9 +153,9 @@ class Signup extends Component {
                                 <FormGroup>
                                     <InputGroup size="lg">
                                         <Input
-                                            placeholder={this.props.lang.page.signup.placeholder_username}
-                                            value = {this.state.Username}
-                                            name='username'
+                                            placeholder={this.props.lang.page.signup.placeholder_email}
+                                            value = {this.state.email}
+                                            name='email'
                                             onChange = {this.onChange}
                                         />
                                         <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
