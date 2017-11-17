@@ -7,9 +7,20 @@ import Header from '../header/header';
 class ForgetPassword extends Component {
     constructor(props){
         super(props);
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
         this.state = {
-            isValid: false
+            isValid: false,
+            username: ''
         };
+    }
+
+    onChange(e){
+        this.setState({[e.target.name]: e.target.value});
+    }
+    onSubmit(e){
+        e.preventDefault();
+        console.log(this.state);
     }
     render() {
         if(!this.props.lang){
@@ -21,7 +32,7 @@ class ForgetPassword extends Component {
                             <header className="signup-header">
                                 <h1 className="signup-title">Forget Password?</h1>
                             </header>
-                            <Form>
+                            <Form onSubmit={this.onSubmit}>
                                 <Container>
                                     <Row>
                                         <Col
@@ -31,7 +42,12 @@ class ForgetPassword extends Component {
                                         >
                                             <FormGroup>
                                                 <InputGroup size="lg">
-                                                    <Input  placeholder='Username (Your Email)'/>
+                                                    <Input
+                                                        placeholder='Username (Your Email)'
+                                                        value = {this.state.username}
+                                                        name='username'
+                                                        onChange = {this.onChange}
+                                                    />
                                                     <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                                 </InputGroup>
                                                 <FormFeedback></FormFeedback>
@@ -64,7 +80,7 @@ class ForgetPassword extends Component {
                         <header className="signup-header">
                             <h1 className="signup-title">{this.props.lang.page.forget_password.welcome}</h1>
                         </header>
-                        <Form>
+                        <Form onSubmit={this.onSubmit}>
                             <Container>
                                 <Row>
                                     <Col
@@ -74,7 +90,12 @@ class ForgetPassword extends Component {
                                     >
                                         <FormGroup>
                                             <InputGroup size="lg">
-                                                <Input  placeholder={this.props.lang.page.forget_password.placeholder_username}/>
+                                                <Input
+                                                    placeholder={this.props.lang.page.forget_password.placeholder_username}
+                                                    value = {this.state.username}
+                                                    name='username'
+                                                    onChange = {this.onChange}
+                                                />
                                                 <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                             </InputGroup>
                                             <FormFeedback></FormFeedback>
