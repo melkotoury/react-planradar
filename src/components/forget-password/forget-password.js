@@ -11,7 +11,7 @@ class ForgetPassword extends Component {
         this.onSubmit = this.onSubmit.bind(this);
         this.state = {
             isValid: false,
-            username: ''
+            email: ''
         };
     }
 
@@ -44,8 +44,8 @@ class ForgetPassword extends Component {
                                                 <InputGroup size="lg">
                                                     <Input
                                                         placeholder='Username (Your Email)'
-                                                        value = {this.state.username}
-                                                        name='username'
+                                                        value = {this.state.email}
+                                                        name='email'
                                                         onChange = {this.onChange}
                                                     />
                                                     <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
@@ -91,9 +91,9 @@ class ForgetPassword extends Component {
                                         <FormGroup>
                                             <InputGroup size="lg">
                                                 <Input
-                                                    placeholder={this.props.lang.page.forget_password.placeholder_username}
-                                                    value = {this.state.username}
-                                                    name='username'
+                                                    placeholder={this.props.lang.page.forget_password.placeholder_email}
+                                                    value = {this.state.email}
+                                                    name='email'
                                                     onChange = {this.onChange}
                                                 />
                                                 <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
