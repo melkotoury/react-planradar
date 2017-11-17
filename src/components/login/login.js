@@ -14,7 +14,7 @@ class Login extends Component {
 
         this.state = {
             isValid: false,
-            username: '',
+            email: '',
             password:''
         };
     }
@@ -48,8 +48,8 @@ class Login extends Component {
                                                 <InputGroup size="lg">
                                                     <Input
                                                         placeholder='Username (Your Email)'
-                                                        value = {this.state.username}
-                                                        name='username'
+                                                        value = {this.state.email}
+                                                        name='email'
                                                         onChange = {this.onChange}
                                                         />
                                                     <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
@@ -138,9 +138,9 @@ class Login extends Component {
                                 <FormGroup>
                                     <InputGroup size="lg">
                                         <Input
-                                            placeholder={this.props.lang.page.login.placeholder_username}
-                                            value = {this.state.username}
-                                            name='username'
+                                            placeholder={this.props.lang.page.login.placeholder_email}
+                                            value = {this.state.email}
+                                            name='email'
                                             onChange = {this.onChange}
                                         />
                                         <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
