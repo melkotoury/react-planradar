@@ -29,11 +29,11 @@ export default function () {
                     "placeholder_password": "Choose Your Password",
                     "signup_button": "Create account"
                 },
-                "forget-password": {
+                "forget_password": {
                     "welcome": "Forget Password?",
                     "placeholder_username": "Username (Your Email)",
                     "reset_password_button": "Reset Password"
-                }
+                },
 
             }
         },
@@ -63,11 +63,11 @@ export default function () {
                     "placeholder_password": "Kennwort auswählen",
                     "signup_button": "Account erstellen"
                 },
-                "forget-password": {
+                "forget_password": {
                     "welcome": "Kennwort zurücksetzen?",
                     "placeholder_username": "Email",
                     "reset_password_button": "Kennwort zurücksetzen"
-                }
+                },
 
             }
         }

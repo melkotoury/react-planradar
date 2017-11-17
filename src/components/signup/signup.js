@@ -7,9 +7,21 @@ import Header from '../header/header';
 class Signup extends Component {
     constructor(props){
         super(props);
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
         this.state = {
-            isValid: false
+            isValid: false,
+            fullname: '',
+            username:'',
+            password:''
         };
+    }
+    onChange(e){
+      this.setState({[e.target.name]: e.target.value});
+    }
+    onSubmit(e){
+        e.preventDefault();
+        console.log(this.state);
     }
     render() {
         if(!this.props.lang){
@@ -21,7 +33,7 @@ class Signup extends Component {
                             <header className="signup-header">
                                 <h1 className="signup-title">Sign Up for free</h1>
                             </header>
-                            <Form>
+                            <Form onSubmit={this.onSubmit}>
                                 <Container>
                                     <Row>
                                         <Col
@@ -31,7 +43,12 @@ class Signup extends Component {
                                         >
                                             <FormGroup>
                                                 <InputGroup size="lg">
-                                                    <Input  placeholder='Full Name'/>
+                                                    <Input
+                                                        placeholder='Full Name'
+                                                        value = {this.state.fullname}
+                                                        name='fullname'
+                                                        onChange = {this.onChange}
+                                                    />
                                                     <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                                 </InputGroup>
                                                 <FormFeedback></FormFeedback>
@@ -45,7 +62,12 @@ class Signup extends Component {
                                         >
                                             <FormGroup>
                                                 <InputGroup size="lg">
-                                                    <Input  placeholder='Email'/>
+                                                    <Input
+                                                        placeholder='Email'
+                                                        value = {this.state.username}
+                                                        name='username'
+                                                        onChange = {this.onChange}
+                                                    />
                                                     <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                                 </InputGroup>
                                                 <FormFeedback></FormFeedback>
@@ -59,7 +81,13 @@ class Signup extends Component {
                                         >
                                             <FormGroup>
                                                 <InputGroup size="lg">
-                                                    <Input type='password'  placeholder='Choose Your Password'/>
+                                                    <Input
+                                                        type='password'
+                                                        placeholder='Choose Your Password'
+                                                        name='password'
+                                                        value = {this.state.password}
+                                                        onChange = {this.onChange}
+                                                    />
                                                     <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
                                                 </InputGroup>
                                                 <FormFeedback></FormFeedback>
@@ -91,7 +119,7 @@ class Signup extends Component {
                 <header className="signup-header">
                     <h1 className="signup-title">{this.props.lang.page.signup.welcome}</h1>
                 </header>
-                <Form>
+                <Form onSubmit={this.onSubmit}>
                     <Container>
                         <Row>
                             <Col
@@ -101,7 +129,12 @@ class Signup extends Component {
                             >
                                 <FormGroup>
                                     <InputGroup size="lg">
-                                        <Input  placeholder={this.props.lang.page.signup.placeholder_fullname}/>
+                                        <Input
+                                            placeholder={this.props.lang.page.signup.placeholder_fullname}
+                                            value = {this.state.fullname}
+                                            name='fullname'
+                                            onChange = {this.onChange}
+                                        />
                                         <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                     </InputGroup>
                                     <FormFeedback></FormFeedback>
@@ -115,7 +148,12 @@ class Signup extends Component {
                             >
                                 <FormGroup>
                                     <InputGroup size="lg">
-                                        <Input  placeholder={this.props.lang.page.signup.placeholder_username}/>
+                                        <Input
+                                            placeholder={this.props.lang.page.signup.placeholder_username}
+                                            value = {this.state.Username}
+                                            name='username'
+                                            onChange = {this.onChange}
+                                        />
                                         <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                     </InputGroup>
                                     <FormFeedback></FormFeedback>
@@ -129,7 +167,12 @@ class Signup extends Component {
                             >
                                 <FormGroup>
                                     <InputGroup size="lg">
-                                        <Input type='password'  placeholder={this.props.lang.page.signup.placeholder_password}/>
+                                        <Input type='password'
+                                               placeholder={this.props.lang.page.signup.placeholder_password}
+                                               value = {this.state.password}
+                                               name='password'
+                                               onChange = {this.onChangePassword}
+                                        />
                                         <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
                                     </InputGroup>
                                     <FormFeedback></FormFeedback>
