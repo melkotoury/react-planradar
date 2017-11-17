@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import logo from '../../assets/logo.png';
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import Language from '../../containers/lang'
 
 import './header.css';
@@ -24,12 +25,71 @@ import './header.css';
     }
 
      displayLinks(page){
+
+        if(!this.props.lang){
+            switch (page){
+                case 'login':
+                    return(
+                        <NavItem>
+                            <Link to='/signup' className='nav-link'>
+                                Signup for free
+                            </Link>
+                        </NavItem>
+                    );
+                case 'signup':
+                    return(
+                        <NavItem>
+                            <Link to='/' className='nav-link'>
+                                Login
+                            </Link>
+                        </NavItem>
+                    );
+                case 'not-found' :
+                    return(
+                        <div className='inherit-div'>
+                            <NavItem>
+                                <Link to='/' className='nav-link'>
+                                    Login
+                                </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link to='/signup' className='nav-link'>
+                                    Signup for free
+                                </Link>
+                            </NavItem>
+                        </div>
+                    );
+                case 'forget-password' :
+                    return(
+                        <div className='inherit-div'>
+                            <NavItem>
+                                <Link to='/' className='nav-link'>
+                                    Login
+                                </Link>
+                            </NavItem>
+                            <NavItem>
+                                <Link to='/signup' className='nav-link'>
+                                    Signup for free
+                                </Link>
+                            </NavItem>
+                        </div>
+                    );
+                default:
+                    return(
+                        <NavItem>
+                            <Link to='/signup' className='nav-link'>
+                                Signup
+                            </Link>
+                        </NavItem>
+                    );
+            }
+        }
         switch (page){
             case 'login':
                 return(
                     <NavItem>
                       <Link to='/signup' className='nav-link'>
-                          Signup
+                          {this.props.lang.page.menu.signup}
                       </Link>
                     </NavItem>
                 );
@@ -37,7 +97,7 @@ import './header.css';
                 return(
                     <NavItem>
                       <Link to='/' className='nav-link'>
-                          Login
+                          {this.props.lang.page.menu.login}
                       </Link>
                     </NavItem>
                 );
@@ -46,12 +106,12 @@ import './header.css';
                 <div className='inherit-div'>
                     <NavItem>
                         <Link to='/' className='nav-link'>
-                            Login
+                            {this.props.lang.page.menu.login}
                         </Link>
                     </NavItem>
                     <NavItem>
                         <Link to='/signup' className='nav-link'>
-                            Signup for free
+                            {this.props.lang.page.menu.signup}
                         </Link>
                     </NavItem>
                 </div>
@@ -61,12 +121,12 @@ import './header.css';
                     <div className='inherit-div'>
                         <NavItem>
                             <Link to='/' className='nav-link'>
-                                Login
+                                {this.props.lang.page.menu.login}
                             </Link>
                         </NavItem>
                         <NavItem>
                             <Link to='/signup' className='nav-link'>
-                                Signup for free
+                                {this.props.lang.page.menu.signup}
                             </Link>
                         </NavItem>
                     </div>
@@ -75,7 +135,7 @@ import './header.css';
                 return(
                     <NavItem>
                         <Link to='/signup' className='nav-link'>
-                            Signup
+                            {this.props.lang.page.menu.signup}
                         </Link>
                     </NavItem>
                 );
@@ -92,7 +152,7 @@ import './header.css';
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
-                            {this.displayLinks(this.props.page)}
+                            {this.displayLinks(this.props.pageName)}
 
                             <Language/>
                         </Nav>
@@ -104,5 +164,13 @@ import './header.css';
 }
 
 
+/**
+ * this function take your store and pass it to your component as a property
+ * */
+function mapStateToProps(state) {
+    return {
+        lang : state.activeLang
+    }
+}
 
-export default Header;
+export default connect(mapStateToProps)(Header);

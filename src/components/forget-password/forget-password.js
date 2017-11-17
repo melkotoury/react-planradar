@@ -13,7 +13,7 @@ class ForgetPassword extends Component {
     render() {
         return (
             <div className="App">
-                <Header page='forget-password'/>
+                <Header pageName='forget-password'/>
                 <div className="App-intro">
                     <div className="signup">
                         <header className="signup-header">

@@ -17,7 +17,7 @@ class Login extends Component {
         if(!this.props.lang){
             return (
                 <div className="App">
-                    <Header page='login'/>
+                    <Header pageName='login'/>
                     <div className="App-intro">
                         <div className="login">
                             <header className="login-header">
