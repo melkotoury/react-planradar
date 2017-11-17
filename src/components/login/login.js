@@ -9,9 +9,22 @@ import Header from '../header/header';
 class Login extends Component {
     constructor(props){
         super(props);
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+
         this.state = {
-            isValid: false
+            isValid: false,
+            username: '',
+            password:''
         };
+    }
+    onChange(e){
+        this.setState({[e.target.name]: e.target.value});
+    }
+
+    onSubmit(e){
+        e.preventDefault();
+        console.log(this.state);
     }
     render() {
         if(!this.props.lang){
@@ -23,7 +36,7 @@ class Login extends Component {
                             <header className="login-header">
                                 <h1 className="login-title">Welcome back!</h1>
                             </header>
-                            <Form>
+                            <Form onSubmit={this.onSubmit}>
                                 <Container>
                                     <Row>
                                         <Col
@@ -33,7 +46,12 @@ class Login extends Component {
                                         >
                                             <FormGroup>
                                                 <InputGroup size="lg">
-                                                    <Input  placeholder='Username (Your Email)'/>
+                                                    <Input
+                                                        placeholder='Username (Your Email)'
+                                                        value = {this.state.username}
+                                                        name='username'
+                                                        onChange = {this.onChange}
+                                                        />
                                                     <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                                 </InputGroup>
                                                 <FormFeedback></FormFeedback>
@@ -47,7 +65,13 @@ class Login extends Component {
                                         >
                                             <FormGroup>
                                                 <InputGroup size="lg">
-                                                    <Input type='password'  placeholder='Choose Your Password'/>
+                                                    <Input
+                                                        type='password'
+                                                        placeholder='Choose Your Password'
+                                                        value = {this.state.password}
+                                                        name='password'
+                                                        onChange = {this.onChange}
+                                                    />
                                                     <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
                                                 </InputGroup>
                                                 <FormFeedback></FormFeedback>
@@ -103,7 +127,7 @@ class Login extends Component {
                 <header className="login-header">
                     <h1 className="login-title">{this.props.lang.page.login.welcome}</h1>
                 </header>
-                <Form>
+                <Form onSubmit={this.onSubmit}>
                     <Container>
                         <Row>
                             <Col
@@ -113,7 +137,12 @@ class Login extends Component {
                             >
                                 <FormGroup>
                                     <InputGroup size="lg">
-                                        <Input  placeholder={this.props.lang.page.login.placeholder_username}/>
+                                        <Input
+                                            placeholder={this.props.lang.page.login.placeholder_username}
+                                            value = {this.state.username}
+                                            name='username'
+                                            onChange = {this.onChange}
+                                        />
                                         <InputGroupAddon><span className="fa fa-user"></span></InputGroupAddon>
                                     </InputGroup>
                                     <FormFeedback></FormFeedback>
@@ -127,7 +156,13 @@ class Login extends Component {
                             >
                                 <FormGroup>
                                     <InputGroup size="lg">
-                                        <Input type='password'  placeholder={this.props.lang.page.login.placeholder_password}/>
+                                        <Input
+                                            type='password'
+                                            placeholder={this.props.lang.page.login.placeholder_password}
+                                            value = {this.state.password}
+                                            name='password'
+                                            onChange = {this.onChange}
+                                        />
                                         <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
                                     </InputGroup>
                                     <FormFeedback></FormFeedback>
