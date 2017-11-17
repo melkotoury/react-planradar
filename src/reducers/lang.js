@@ -1,5 +1,5 @@
 /**
- * this user reducer is a function which return to us a javascript object of our users
+ * this lang reducer is a function which return to us a javascript object of our users
  * */
 export default function () {
     return [

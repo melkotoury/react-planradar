@@ -3,6 +3,9 @@ import {Button, Form, FormGroup, InputGroup, InputGroupAddon, Input, FormFeedbac
 import './signup.css';
 import {connect} from 'react-redux';
 import Header from '../header/header';
+import {bindActionCreators} from 'redux';
+import {userSignupRequest} from "../../actions/user-signup";
+
 
 class Signup extends Component {
     constructor(props){
@@ -21,7 +24,8 @@ class Signup extends Component {
     }
     onSubmit(e){
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
+        this.props.userSignupRequest(this.state);
     }
     render() {
         if(!this.props.lang){
@@ -198,13 +202,20 @@ class Signup extends Component {
     }
 }
 
+//dispatch actions (don't hook it to the component)
+
+function matchDispatchToProps(dispatch) {
+    return bindActionCreators({userSignupRequest : userSignupRequest}, dispatch);
+}
 /**
  * this function take your store and pass it to your component as a property
  * */
 function mapStateToProps(state) {
     return {
-        lang : state.activeLang
+        user : state.signupUser
     }
 }
 
-export default connect(mapStateToProps)(Signup);
+
+
+export default connect(mapStateToProps,matchDispatchToProps)(Signup);
