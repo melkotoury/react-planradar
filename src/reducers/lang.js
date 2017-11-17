@@ -27,6 +27,7 @@ export default function () {
                     "placeholder_fullname": "Full Name",
                     "placeholder_email": "Username (Your Email)",
                     "placeholder_password": "Choose Your Password",
+                    "placeholder_password_confirm": "Choose Your Password",
                     "signup_button": "Create account"
                 },
                 "forget_password": {
@@ -61,6 +62,7 @@ export default function () {
                     "placeholder_fullname": "Vorname & Nachname",
                     "placeholder_email": "Benutzername (Ihre E-Mail)",
                     "placeholder_password": "Kennwort auswählen",
+                    "placeholder_password_confirm": "Kennwort auswählen",
                     "signup_button": "Account erstellen"
                 },
                 "forget_password": {

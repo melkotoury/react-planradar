@@ -4,7 +4,7 @@ import './signup.css';
 import {connect} from 'react-redux';
 import Header from '../header/header';
 import {bindActionCreators} from 'redux';
-import {userSignupRequest} from "../../actions/user-signup";
+import {userSignupRequest} from "../../actions/signupActions";
 
 
 class Signup extends Component {
@@ -12,11 +12,14 @@ class Signup extends Component {
         super(props);
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.checkUserExists = this.checkUserExists.bind(this);
+
         this.state = {
             isValid: false,
             fullname: '',
             email:'',
-            password:''
+            password:'',
+            password_confirm:''
         };
     }
     onChange(e){
@@ -103,6 +106,26 @@ class Signup extends Component {
                                             sm={{size: 6, offset: 3}}
                                             lg={{size: 4, offset: 4}}
                                         >
+                                            <FormGroup>
+                                                <InputGroup size="lg">
+                                                    <Input
+                                                        type='password'
+                                                        placeholder='Password Confirmation'
+                                                        name='password_confirm'
+                                                        value = {this.state.password_confirm}
+                                                        onChange = {this.onChange}
+                                                    />
+                                                    <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
+                                                </InputGroup>
+                                                <FormFeedback></FormFeedback>
+                                                <FormText></FormText>
+                                            </FormGroup>
+                                        </Col>
+                                        <Col
+                                            xs={{size: 12}}
+                                            sm={{size: 6, offset: 3}}
+                                            lg={{size: 4, offset: 4}}
+                                        >
                                             <Button className='btn btn-success btn-block'>Create new account <span className="pull-right fa fa-arrow-right"></span></Button>
                                         </Col>
                                     </Row>
@@ -176,6 +199,26 @@ class Signup extends Component {
                                                value = {this.state.password}
                                                name='password'
                                                onChange = {this.onChangePassword}
+                                        />
+                                        <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
+                                    </InputGroup>
+                                    <FormFeedback></FormFeedback>
+                                    <FormText></FormText>
+                                </FormGroup>
+                            </Col>
+                            <Col
+                                xs={{size: 12}}
+                                sm={{size: 6, offset: 3}}
+                                lg={{size: 4, offset: 4}}
+                            >
+                                <FormGroup>
+                                    <InputGroup size="lg">
+                                        <Input
+                                            type='password'
+                                            placeholder={this.props.lang.page.signup.placeholder_password_confirm}
+                                            name='password'
+                                            value = {this.state.password_confirm}
+                                            onChange = {this.onChange}
                                         />
                                         <InputGroupAddon><span className="fa fa-lock"></span></InputGroupAddon>
                                     </InputGroup>
